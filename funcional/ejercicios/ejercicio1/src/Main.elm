@@ -1,6 +1,6 @@
 module Main exposing (..)
 
-import Html exposing (Html, text)
+import Html exposing (Html, a, text)
 
 
 main : Html msg
@@ -10,12 +10,33 @@ main =
 
 add : Int -> Int -> Int
 add a b =
-    a + b
+    if b == 0 then
+        a
+
+    else
+        add (a + 1) (b - 1)
 
 
 multiply : Int -> Int -> Int
 multiply a b =
-    a * b
+    if b == 0 then
+        0
+
+    else if b == 1 then
+        a
+
+    else
+        a + multiply a (b - 1)
+
+
+multiply2 : Int -> Int -> Int -> Int
+multiply2 a b acc =
+    if b == 0 then
+        acc
+
+    else
+        multiply2 a (b - 1) (acc + a)
+
 
 
 -- Ejercicio 1: Función Potencia
@@ -60,6 +81,7 @@ fibonacciExponential n =
 
 fibonacciLinear : Int -> Int
 fibonacciLinear n =
+    fibonacciHelper n 0 1
     fibonacciHelper n 0 1
 
 
@@ -147,6 +169,7 @@ isPalindrome n =
 
 reverseNumber : Int -> Int
 reverseNumber n =
+    reverseHelper n 0
     reverseHelper n 0
 
 
