@@ -81,7 +81,7 @@ fibonacciExponential n =
 
 fibonacciLinear : Int -> Int
 fibonacciLinear n =
-    fibonacciHelper n 0 1
+   -- fibonacciHelper n 0 1
     fibonacciHelper n 0 1
 
 
@@ -169,7 +169,7 @@ isPalindrome n =
 
 reverseNumber : Int -> Int
 reverseNumber n =
-    reverseHelper n 0
+   -- reverseHelper n 0
     reverseHelper n 0
 
 
